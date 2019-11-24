@@ -2,61 +2,64 @@
     text-align: center;
 }
 
+.bold {
+    font-weight: bold;
+}
+
+.container {
+    width: 30em;
+    margin: 2em auto;
+    padding: 2.4em 0;
+    background: #007e80;
+    color: white;
+}
+
 .header {
     color: #fb6900;
 }
 
+.header2 {
+    margin-bottom: 2em;
+}
+
 .inputField {
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: .8em;
 }
 
 .input {
     display: block;
-    padding: 5px 20px;
-    margin: 5px auto;
+    padding: .3em 1.2em;
+    margin: .3em auto;
     font-family: 'Lato', 'sans-serif';
     text-align: center;
-    border-radius: 10px;
-}
-
-.submitButton {
-    margin-top: 20px;
-    padding: 8px 15px;
-    font-size: 1.1em;
-    font-family: 'Lato', 'sans-serif';
-    background: #00b9bd;
-    border: none;
-    border-radius: 10px;
-}
-
-.container {
-    width: 500px;
-    margin: 35px auto;
-    padding: 50px 0;
-    background: #007e80;
+    border-radius: .6em;
 }
 
 .verificationRow {
     display: flex;
     justify-content: space-between;
-    margin: 0 70px 15px;
-    color: white;
+    margin: 0 4.2em .9em;
 }
 
-.verificationLabels {
-    /* width: 50%; */
-    text-align: left;
+.button {
+    font-family: 'Lato', 'sans-serif';
+    border: none;
+    font-size: 1.1em;
 }
 
-.verificationValues {
-    /* width: 50%; */
-    text-align: left;
+.button:hover {
+    cursor: pointer;
 }
 
-.normalizeH4 {
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
+.submitButton {
+    margin-top: 1.5em;
+    padding: .5em 1em;
+    background: #00b9bd;
+    border-radius: .6em;
+}
+
+.cancelButton {
+    background: none;
+    text-decoration: underline;
 }

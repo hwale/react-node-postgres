@@ -49,13 +49,15 @@ const Landing = props => {
         <div>
             <h1 className={`${styles.header}`}>Registration</h1>
             <div className={`${styles.container}`}>
-                <InputField type="text" name="firstName" label="First Name:" value={firstName} onChange={handleRegistrationChange}/>
-                <InputField type="text" name="lastName" label="Last Name:" value={lastName} onChange={handleRegistrationChange}/>
-                <InputField type="text" name="username" label="Username:" value={username} onChange={handleRegistrationChange}/>
-                <InputField type="text" name="email" label="Email:" value={email} onChange={handleRegistrationChange}/>
-                <InputField type="password" name="password" label="Password:" value={password} onChange={handleRegistrationChange}/>
-                <InputField type="password" name="password2" label="Confirm Password:" value={password2} onChange={handleRegistrationChange}/>
-                <button className={`${styles.submitButton}`} onClick={onRegistrationContinue}>Continue</button>
+                <form onSubmit={onRegistrationContinue}>
+                    <InputField type="text" name="firstName" label="First Name:" value={firstName} onChange={handleRegistrationChange}/>
+                    <InputField type="text" name="lastName" label="Last Name:" value={lastName} onChange={handleRegistrationChange}/>
+                    <InputField type="text" name="username" label="Username:" value={username} onChange={handleRegistrationChange}/>
+                    <InputField type="text" name="email" label="Email:" value={email} onChange={handleRegistrationChange}/>
+                    <InputField type="password" name="password" label="Password:" value={password} onChange={handleRegistrationChange}/>
+                    <InputField type="password" name="password2" label="Confirm Password:" value={password2} onChange={handleRegistrationChange}/>
+                    <button className={`${styles.button} ${styles.submitButton}`}>Continue</button>
+                </form>
             </div>
         </div>
     )

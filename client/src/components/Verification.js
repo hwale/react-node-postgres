@@ -3,6 +3,15 @@ import { connect } from 'react-redux';
 import { users_create } from '../server';
 import styles from '../styles/styles.module.css';
 
+const Row = ({ name, value }) => {
+    return (
+        <div className={`${styles.verificationRow}`}>
+            <div><span className={`${styles.bold}`}>{name}</span></div>
+            <div>{value}</div>
+        </div>
+    )
+}
+
 const Verification = props => {
     const {
         firstName,
@@ -38,26 +47,22 @@ const Verification = props => {
             })
     };
 
-    const Row = ({ name, value }) => {
-        return (
-            <div className={`${styles.verificationRow}`}>
-                <div className={`${styles.verificationLabels}`}><h4 className={`${styles.normalizeH4}`}>{name}</h4></div>
-                <div className={`${styles.verificationValues}`}>{value}</div>
-            </div>
-        )
+    const backToStart = () => {
+
     }
 
     return (
         <div className={`${styles.alignCenter}`}>
             <h1 className={`${styles.header}`}>Verification</h1>
             <div className={`${styles.container}`}>
+                <div className={`${styles.header2} ${styles.bold}`}>Is this information correct?</div>
                 <Row name="First Name:" value={firstName}/>
                 <Row name="Last Name:" value={lastName}/>
                 <Row name="Username:" value={username}/>
                 <Row name="Email:" value={email}/>
                 <Row name="Password:" value={password}/>
-                <button className={`${styles.submitButton}`}>Submit</button>
-                <button>Cancel</button>
+                <button className={`${styles.button} ${styles.cancelButton}`} onClick={() => history.push('/')}>Go Back</button>
+                <button className={`${styles.button} ${styles.submitButton}`}>Submit</button>
             </div>
         </div>
     )
