@@ -6,5 +6,10 @@ export const users_create = async user => {
         },
         body: JSON.stringify(user)
     });
-    return await response.json();
+    if (response.ok) {
+        return await response.json();
+    } 
+    else {
+        return false;
+    }
 }

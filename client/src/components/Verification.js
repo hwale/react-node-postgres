@@ -50,10 +50,12 @@ const Verification = props => {
         }
         users_create(user)
             .then(res => {
-                history.push('/confirmation');
-            })
-            .catch(err => {
-                alert("There was an error while submitting. Please try again.");
+                if (!res) {
+                    alert("There was an error while submitting. Please try again.");
+                }
+                else {
+                    history.push('/confirmation');
+                }
             })
     };
 
