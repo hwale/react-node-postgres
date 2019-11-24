@@ -3,11 +3,19 @@ import { connect } from 'react-redux';
 import { users_create } from '../server';
 import styles from '../styles/styles.module.css';
 
-const Row = ({ name, value }) => {
+const Row = ({ name, value, password }) => {
+    const [showPw, setShowPw] = useState(false);
+
     return (
         <div className={`${styles.verificationRow}`}>
             <div><span className={`${styles.bold}`}>{name}</span></div>
-            <div>{value}</div>
+            {
+                password
+                    ? showPw
+                        ? <div>{value}</div>
+                        : <div className={`${styles.linkButton}`} onClick={() => setShowPw(true)}>Click to show</div>
+                    : <div>{value}</div>
+            }
         </div>
     )
 }
@@ -22,12 +30,14 @@ const Verification = props => {
         history
     } = props;
 
-    const [showPw, setShowPw] = useState(false);
-
-    const hidePw = pw => {
-        const length = pw.length;
-        const asterisk = "*";
-        return asterisk.repeat(pw.length);
+    if (
+        !firstName ||
+        !lastName ||
+        !username ||
+        !email ||
+        !password
+    ) {
+        history.push('/');
     }
 
     const createUser = () => {
@@ -40,16 +50,12 @@ const Verification = props => {
         }
         users_create(user)
             .then(res => {
-                console.log(res)
+                history.push('/confirmation');
             })
             .catch(err => {
-                console.log(err)
+                alert("There was an error while submitting. Please try again.");
             })
     };
-
-    const backToStart = () => {
-
-    }
 
     return (
         <div className={`${styles.alignCenter}`}>
@@ -60,9 +66,9 @@ const Verification = props => {
                 <Row name="Last Name:" value={lastName}/>
                 <Row name="Username:" value={username}/>
                 <Row name="Email:" value={email}/>
-                <Row name="Password:" value={password}/>
-                <button className={`${styles.button} ${styles.cancelButton}`} onClick={() => history.push('/')}>Go Back</button>
-                <button className={`${styles.button} ${styles.submitButton}`}>Submit</button>
+                <Row name="Password:" value={password} password/>
+                <button className={`${styles.button} ${styles.linkButton}`} onClick={() => history.push('/')}>Go Back</button>
+                <button className={`${styles.button} ${styles.actionButton}`} onClick={createUser}>Submit</button>
             </div>
         </div>
     )
@@ -71,11 +77,11 @@ const Verification = props => {
 const mapStateToProps = state => {
     const { firstName, lastName, username, email, password } = state.registration;
     return {
-        firstName: firstName || "Charlie",
-        lastName: lastName || "Park",
-        username: username || "hwale",
-        email: email || "sketchblock@gmail.com",
-        password: password || "123"
+        firstName: firstName,
+        lastName: lastName,
+        username: username,
+        email: email,
+        password: password
     };
 };
 

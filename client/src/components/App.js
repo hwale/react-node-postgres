@@ -2,10 +2,9 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Landing from './Landing';
 import Verification from './Verification';
+import Confirmation from './Confirmation';
 import '../styles/main.css';
 import styles from '../styles/styles.module.css';
-
-const Confirmation = () => <h2>Confirmation</h2>;
 
 const App = () => {
     return (

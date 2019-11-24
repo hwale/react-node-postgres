@@ -1,5 +1,4 @@
 export const users_create = async user => {
-    console.log(user, "user inside api")
     const response =  await fetch('/api/users', {
         method: 'POST',
         headers: {

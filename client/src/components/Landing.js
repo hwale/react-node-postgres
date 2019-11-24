@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { handleRegistrationChange } from '../redux/actions';
+import { handleRegistrationChange } from '../redux/actions/index';
 import styles from '../styles/styles.module.css';
 
 const InputField = ({ type, name, label, value, onChange }) => {
@@ -29,10 +29,10 @@ const Landing = props => {
     const onRegistrationContinue = event => {
         event.preventDefault();
         if (
-            !firstName,
-            !lastName,
-            !username,
-            !email,
+            !firstName ||
+            !lastName ||
+            !username ||
+            !email ||
             !password
         ) {            
             return alert("Please fill in all fields.");
@@ -56,7 +56,7 @@ const Landing = props => {
                     <InputField type="text" name="email" label="Email:" value={email} onChange={handleRegistrationChange}/>
                     <InputField type="password" name="password" label="Password:" value={password} onChange={handleRegistrationChange}/>
                     <InputField type="password" name="password2" label="Confirm Password:" value={password2} onChange={handleRegistrationChange}/>
-                    <button className={`${styles.button} ${styles.submitButton}`}>Continue</button>
+                    <button className={`${styles.button} ${styles.actionButton}`}>Continue</button>
                 </form>
             </div>
         </div>

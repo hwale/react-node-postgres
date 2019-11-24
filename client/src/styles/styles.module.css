@@ -52,14 +52,18 @@
     cursor: pointer;
 }
 
-.submitButton {
+.actionButton {
     margin-top: 1.5em;
     padding: .5em 1em;
     background: #00b9bd;
     border-radius: .6em;
 }
 
-.cancelButton {
+.linkButton {
     background: none;
     text-decoration: underline;
+}
+
+.linkButton:hover {
+    cursor: pointer;
 }
