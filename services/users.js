@@ -16,9 +16,9 @@ module.exports = {
         ]
         try {
             const { rows } = await db.query(text, params);
-            return res.status(201).send(rows[0]);
+            return res.status(201).send(rows[0]).redirect('/confirmation');
         } 
-        catch(error) {
+        catch (error) {
             return res.status(400).send(error);
         }
     }
