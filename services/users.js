@@ -2,7 +2,6 @@ const db = require('../db');
 
 module.exports = {
     create: async (req, res) => {
-        console.log(req.body);
         const { first_name, last_name, username, email, password } = req.body;
         const text = `INSERT INTO
             users(first_name, last_name, username, email, password)
@@ -18,7 +17,8 @@ module.exports = {
         try {
             const { rows } = await db.query(text, params);
             return res.status(201).send(rows[0]);
-        } catch(error) {
+        } 
+        catch(error) {
             return res.status(400).send(error);
         }
     }
