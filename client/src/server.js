@@ -1,5 +1,11 @@
-import * as axios from 'axios';
-
-export const users_create = user => {
-    return axios.post('/api/users', user);
+export const users_create = async user => {
+    console.log(user, "user inside api")
+    const response =  await fetch('/api/users', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    });
+    return await response.json();
 }

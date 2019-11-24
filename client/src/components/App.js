@@ -1,14 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Landing from './Landing';
+import Verification from './Verification';
+import '../styles/main.css';
+import styles from '../styles/styles.module.css';
 
-// const Landing = () => <h2>Landing</h2>;
-const Verification = () => <h2>Verification</h2>;
 const Confirmation = () => <h2>Confirmation</h2>;
 
 const App = () => {
     return (
-        <div>
+        <div className={`${styles.alignCenter}`}>
             <BrowserRouter>
                 <div>
                     <Route exact path="/" component={Landing} />

@@ -1,0 +1,62 @@
+.alignCenter {
+    text-align: center;
+}
+
+.header {
+    color: #fb6900;
+}
+
+.inputField {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.input {
+    display: block;
+    padding: 5px 20px;
+    margin: 5px auto;
+    font-family: 'Lato', 'sans-serif';
+    text-align: center;
+    border-radius: 10px;
+}
+
+.submitButton {
+    margin-top: 20px;
+    padding: 8px 15px;
+    font-size: 1.1em;
+    font-family: 'Lato', 'sans-serif';
+    background: #00b9bd;
+    border: none;
+    border-radius: 10px;
+}
+
+.container {
+    width: 500px;
+    margin: 35px auto;
+    padding: 50px 0;
+    background: #007e80;
+}
+
+.verificationRow {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 70px 15px;
+    color: white;
+}
+
+.verificationLabels {
+    /* width: 50%; */
+    text-align: left;
+}
+
+.verificationValues {
+    /* width: 50%; */
+    text-align: left;
+}
+
+.normalizeH4 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
