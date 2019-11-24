@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { users_create } from '../server';
+import { users_create } from '../server/users';
 import styles from '../styles/styles.module.css';
 
 const Row = ({ name, value, password }) => {

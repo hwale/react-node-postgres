@@ -1,9 +1,7 @@
 import React from 'react';
 import styles from '../styles/styles.module.css';
 
-const Confirmation = ({ fromVerification, history }) => {
-    if (!fromVerification) history.push('/');
-
+const Confirmation = () => {
     return (
         <div>
             <h1 className={`${styles.header}`}>Confirmation</h1>
